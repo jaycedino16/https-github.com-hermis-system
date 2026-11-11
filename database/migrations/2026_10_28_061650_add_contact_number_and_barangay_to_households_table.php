@@ -8,16 +8,24 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::table('households', function (Blueprint $table) {
-            $table->string('contact_number')->nullable();
-            $table->string('barangay')->default('Anoling');
-        });
+        // Add contact_number only if it does not exist.
+        if (!Schema::hasColumn('households', 'contact_number')) {
+            Schema::table('households', function (Blueprint $table) {
+                $table->string('contact_number')->nullable();
+            });
+        }
+
+        // Add barangay only if it does not exist.
+        if (!Schema::hasColumn('households', 'barangay')) {
+            Schema::table('households', function (Blueprint $table) {
+                $table->string('barangay')->default('Anoling');
+            });
+        }
     }
 
     public function down(): void
     {
-        Schema::table('households', function (Blueprint $table) {
-            $table->dropColumn(['contact_number', 'barangay']);
-        });
+        // Intentionally do not drop these columns.
+        // They may contain existing production data.
     }
 };
