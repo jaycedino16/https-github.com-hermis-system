@@ -1,59 +1,193 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# HERMIS
+### Household Evacuation and Risk Management Information System
 
-## About Laravel
+A web-based system designed to support household management, evacuation monitoring, and evacuation route management in **Barangay Anoling, Camalig, Albay, Philippines**.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+HERMIS aims to help organize household information, support evacuation-related activities, and provide a centralized platform for monitoring and managing evacuation operations within the community.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Project Overview
 
-## Learning Laravel
+The Household Evacuation and Risk Management Information System (HERMIS) is a web-based application developed to assist in managing household records and evacuation-related information.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+The system provides a centralized platform for recording household information, monitoring evacuation activities, and managing evacuation routes. It aims to improve the organization, accessibility, and management of community evacuation data.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+HERMIS is developed using the Laravel framework and is designed to support both local development and online deployment.
 
-## Laravel Sponsors
+## Key Features
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **Household Management** – Manage and organize household records and related information.
+- **Evacuation Management** – Support the management of evacuation-related information and activities.
+- **Evacuation Monitoring** – Provide access to information needed to monitor evacuation operations.
+- **Route Management** – Support the management and presentation of evacuation routes.
+- **Dashboard** – Provide a centralized view of relevant system information.
+- **User Authentication** – Provide secure login and access to the system.
 
-### Premium Partners
+## Technologies Used
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+| Technology | Purpose |
+|---|---|
+| PHP | Server-side programming language |
+| Laravel 12 | Web application framework |
+| JavaScript | Client-side functionality |
+| HTML5 | Web page structure |
+| CSS3 | Styling and layout |
+| Tailwind CSS | Utility-first CSS framework |
+| Alpine.js | Lightweight JavaScript interactions |
+| Vite | Frontend asset development and bundling |
+| SQLite | Local development database |
+| PostgreSQL | Online production database |
+| Composer | PHP dependency management |
+| Node.js and npm | JavaScript dependency management |
+| Git and GitHub | Version control and source code management |
+| Visual Studio Code | Development environment |
+| XAMPP | Local development environment |
 
-## Contributing
+## System Requirements
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Before installing and running HERMIS locally, make sure the following are available:
 
-## Code of Conduct
+- PHP 8.2 or later
+- Composer
+- Node.js and npm
+- Git
+- Visual Studio Code or another code editor
+- XAMPP (for local development)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Installation and Setup
 
-## Security Vulnerabilities
+Follow these steps to set up HERMIS on your local computer.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/jaycedino16/hermis-system.git
+```
+
+### 2. Navigate to the Project Directory
+
+```bash
+cd hermis-system
+```
+
+### 3. Install PHP Dependencies
+
+```bash
+composer install
+```
+
+### 4. Install JavaScript Dependencies
+
+```bash
+npm install
+```
+
+### 5. Create the Environment File
+
+Copy the example environment file:
+
+```bash
+copy .env.example .env
+```
+
+For Windows PowerShell, you may also use:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+### 6. Generate the Application Key
+
+```bash
+php artisan key:generate
+```
+
+### 7. Configure the Database
+
+For local development, HERMIS uses SQLite.
+
+Make sure the SQLite database file exists at:
+
+```text
+database/database.sqlite
+```
+
+If the file does not exist, create an empty file with that name.
+
+In your `.env` file, configure the database connection:
+
+```env
+DB_CONNECTION=sqlite
+```
+
+### 8. Run Database Migrations
+
+```bash
+php artisan migrate
+```
+
+### 9. Build Frontend Assets
+
+```bash
+npm run build
+```
+
+### 10. Start the Local Development Server
+
+```bash
+php artisan serve
+```
+
+Open your browser and visit:
+
+```text
+http://127.0.0.1:8000
+```
+
+HERMIS should now be accessible through your local development environment.
+
+## Database Information
+
+HERMIS uses different database configurations for local development and online deployment.
+
+| Environment | Database |
+|---|---|
+| Local Development | SQLite |
+| Online Deployment | PostgreSQL |
+
+**Note:** The local SQLite database and the online PostgreSQL database are separate databases. Changes made to one database do not automatically synchronize with the other.
+
+## Deployment
+
+HERMIS is deployed online using EthioDeploy.
+
+**Live Website:**  
+https://hermis.ethiodeploy.app
+
+The online deployment uses PostgreSQL as its production database.
+
+## Project Repository
+
+**GitHub Repository:**  
+https://github.com/jaycedino16/hermis-system
+
+## Development Team
+
+The following students contributed to the development of HERMIS:
+
+1. **Jay Louise B. Cediño**
+2. **Kc San Buenaventura**
+3. **Angela Mae Bandoquillo**
+4. **Dincel Montales**
+
+## Project Purpose
+
+HERMIS was developed as an information system project focused on improving the management of household information, evacuation monitoring, and evacuation route management in Barangay Anoling, Camalig, Albay.
+
+Through the use of web-based technology, the project aims to support better organization and accessibility of evacuation-related information for the community.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is developed for academic purposes. The Laravel framework used in this project is open-source software licensed under the [MIT License](https://opensource.org/licenses/MIT).
